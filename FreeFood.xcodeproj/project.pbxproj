@@ -18,7 +18,6 @@
 		05A6A0EF1FB867A0000472F9 /* TotalMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A6A0EE1FB867A0000472F9 /* TotalMapViewController.swift */; };
 		05A6A0F21FB8681A000472F9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05A6A0F11FB8681A000472F9 /* MapKit.framework */; };
 		05A6A0F41FB878BA000472F9 /* pin-map-7.png in Resources */ = {isa = PBXBuildFile; fileRef = 05A6A0F31FB878BA000472F9 /* pin-map-7.png */; };
-		05A6A0F61FB8A2B0000472F9 /* SingleMapViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A6A0F51FB8A2B0000472F9 /* SingleMapViewController2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,7 +34,6 @@
 		05A6A0EE1FB867A0000472F9 /* TotalMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TotalMapViewController.swift; sourceTree = "<group>"; };
 		05A6A0F11FB8681A000472F9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		05A6A0F31FB878BA000472F9 /* pin-map-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pin-map-7.png"; sourceTree = "<group>"; };
-		05A6A0F51FB8A2B0000472F9 /* SingleMapViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleMapViewController2.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,7 +74,6 @@
 				051445031FAAAF9A00B20DF5 /* AppDelegate.swift */,
 				051445051FAAAF9A00B20DF5 /* ViewController.swift */,
 				051445071FAAAF9A00B20DF5 /* Main.storyboard */,
-				05A6A0F51FB8A2B0000472F9 /* SingleMapViewController2.swift */,
 				05A6A0EE1FB867A0000472F9 /* TotalMapViewController.swift */,
 				051445151FAAAFF700B20DF5 /* FreeFoodTableViewController.swift */,
 				0514450A1FAAAF9A00B20DF5 /* Assets.xcassets */,
@@ -171,7 +168,6 @@
 			files = (
 				05A6A0EF1FB867A0000472F9 /* TotalMapViewController.swift in Sources */,
 				051445061FAAAF9A00B20DF5 /* ViewController.swift in Sources */,
-				05A6A0F61FB8A2B0000472F9 /* SingleMapViewController2.swift in Sources */,
 				051445161FAAAFF700B20DF5 /* FreeFoodTableViewController.swift in Sources */,
 				055D503E1FBDD161005DB8D5 /* SingleMapTableViewController.swift in Sources */,
 				051445041FAAAF9A00B20DF5 /* AppDelegate.swift in Sources */,
