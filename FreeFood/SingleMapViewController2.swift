@@ -31,8 +31,6 @@ class SingleMapViewController: UIViewController {
         
         let sLoc = sItem["loc"]
         let sAddr = sItem["addr"]
-        let sTarget = sItem["target"]
-        
         zoomToRegion()
         
         self.title = sLoc

@@ -4,7 +4,26 @@
 //
 //  Created by 김종현 on 2017. 11. 2..
 //  Copyright © 2017년 김종현. All rights reserved.
+//  XCode 8.3.3
 //
+////////////////////////////////////////////////
+// DetailsInfo item name
+// idx : 일련번호
+// name : 시설명
+// loc :  급식장소
+// target : 급식대상
+// mealDay : 급식일
+// time : 급식시간
+// startDay : 운영시작일
+// endDay : 운영종료일
+// manageNm : 운영기관명
+// phone : 연락처
+// addr : 지번주소
+// lng : 경도
+// lat : 위도
+// gugun : 구군
+////////////////////////////////////////////////////
+
 
 import UIKit
 
@@ -61,10 +80,10 @@ class FreeFoodTableViewController: UITableViewController,XMLParserDelegate {
                 let success = parser.parse()
                 if success {
                     print("parse success")
-                    //print(item)
+                    print("totalCount = \(totalCount)")
                     
                 } else {
-                    print("parse fail")
+                    print("parse failed")
                 }
             }
         }
@@ -120,8 +139,7 @@ class FreeFoodTableViewController: UITableViewController,XMLParserDelegate {
         // foundCharacters가 두번 호출
         if item[key] == nil {
             item[key] = string.trimmingCharacters(in: .whitespaces)
-            //print("****** \(item[key])")
-			
+            //print("item(\(key)) = \(item[key])")
 			
 			//*******key가 totalCount 이면 totalCount 변수에 저장
 			if key == "totalCount" {
@@ -135,6 +153,7 @@ class FreeFoodTableViewController: UITableViewController,XMLParserDelegate {
             items.append(item)
         }
     }
+    
 
     
     // MARK: - Table view data source
@@ -174,10 +193,10 @@ class FreeFoodTableViewController: UITableViewController,XMLParserDelegate {
             let totalMVC = segue.destination as! TotalMapViewController
             totalMVC.tItems = items
             
-        } else if segue.identifier == "goSingle" {
-            let singleMVC = segue.destination as! SingleMapViewController
+        } else if segue.identifier == "goSingleMap" {
+            let singleMTVC = segue.destination as! SingleMapTableViewController
             let selectedIndex = tableView.indexPathForSelectedRow
-            singleMVC.sItem = items[(selectedIndex?.row)!]
+            singleMTVC.sItem = items[(selectedIndex?.row)!]
             
         }
      }
