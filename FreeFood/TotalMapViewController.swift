@@ -53,12 +53,12 @@ class TotalMapViewController: UIViewController, CLLocationManagerDelegate {
             anno.coordinate.longitude = fLong
             anno.title = item["loc"]
             anno.subtitle = item["addr"]
-            
             annos.append(anno)
             
         }
         //myMapView.showAnnotations(annos, animated: true)
         myMapView.addAnnotations(annos)
+        myMapView.selectAnnotation(annos[0], animated: true)
         
     }
 

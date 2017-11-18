@@ -45,6 +45,8 @@ class FreeFoodTableViewController: UITableViewController,XMLParserDelegate {
                 
         let fileManager = FileManager.default
         let url = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("data.plist")
+        
+        //print(url)
 		
 		//시작할때마다 TotalCount를 받아옴
 		getList(numOfRows: 0)
@@ -58,14 +60,14 @@ class FreeFoodTableViewController: UITableViewController,XMLParserDelegate {
 				//파일에서 읽어본 갯수와 totalCount가 다르면(변화가 있으면) 다시 읽어와서 저장
 				getList(numOfRows: totalCount)
 				saveDetail(url: url!)
-			}
+            }
         } else {
 			//******* 파일이 없으면
 			getList(numOfRows: totalCount)
 			saveDetail(url: url!)
        }
         
-        tableView.reloadData()
+       tableView.reloadData()
     }
 	
 	func getList(numOfRows:Int) { //numOfRows를 입력
@@ -79,11 +81,11 @@ class FreeFoodTableViewController: UITableViewController,XMLParserDelegate {
                 parser.delegate = self
                 let success = parser.parse()
                 if success {
-                    print("parse success")
+                    print("parse success in getList")
                     print("totalCount = \(totalCount)")
                     
                 } else {
-                    print("parse failed")
+                    print("parse failed in hetList")
                 }
             }
         }
@@ -97,11 +99,11 @@ class FreeFoodTableViewController: UITableViewController,XMLParserDelegate {
                 parser.delegate = self
                 let success = parser.parse()
                 if success {
-                    print("parse success")
+                    print("parse success in getDetail")
                     //print(items)
                     
                 } else {
-                    print("parse fail")
+                    print("parse fail in getDeatil")
                 }
             }
         }
@@ -111,6 +113,7 @@ class FreeFoodTableViewController: UITableViewController,XMLParserDelegate {
 	// Detail Data 가져오는 부분을 saveDetail 메소드로 extract
 	func saveDetail(url:URL) {
 		let tempItems = items  // tableView에서 재활용
+        //print("items = \(items)")
 		
 		items = []
 		
@@ -119,10 +122,9 @@ class FreeFoodTableViewController: UITableViewController,XMLParserDelegate {
 			getDetail(idx: dic["idx"]!)
 		}
 		
-		//print("After getDetail = \(items)")
-		
 		let temp = items as NSArray  // NSArry는 화일로 저장하기 위함
 		temp.write(to: url, atomically: true)
+        
 	}
 
     func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
